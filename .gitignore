@@ -1,2 +1,6 @@
-[Bb]in/
-[Oo]bj/
+__pycache__/
+*.pyc
+venv/
+dist/
+build/
+*.spec
