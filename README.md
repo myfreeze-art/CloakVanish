@@ -12,82 +12,64 @@ CloakVanish is an API-driven, zero-knowledge email routing and sanitization plat
 *   **Automated Ephemeral Purging (Cron-Shred):** Upon reaching user-defined TTL (Time-To-Live) thresholds, the system triggers a multi-pass cryptographic wipe across all distributed storage nodes, leaving absolutely no forensic remnants of the inbox or its metadata.
 *   **Anonymized Outbound Relay:** The outbound SMTP relay reconstructs message headers from scratch, completely purging originating IP addresses, user-agent data, and mail client routing histories to guarantee unidirectional anonymity during replies.
 
-## Project Architecture
+## Project Architecture (C# / .NET)
 
-The boilerplate project structure:
+This repository provides a fully functional native Windows Desktop Application demonstrating the core conceptual logic of CloakVanish. The solution is built using **C#**, **.NET**, and **WPF (Windows Presentation Foundation)**.
 
 ```
-├── src/                      # Core Logic
-│   ├── alias_generator.py    # Generates human-like aliases
-│   └── tracker_neutralizer.py# Strips tracking pixels from HTML
-├── tests/                    # Unit Tests
-│   ├── test_alias.py
-│   └── test_tracker.py
-├── docs/                     # Additional Documentation
-├── cloakvanish_cli.py        # Standalone CLI Interface
-└── README.md                 # Technical Documentation
+CloakVanish/
+├── CloakVanish.sln                   # The main .NET Solution file
+├── CloakVanishCore/                  # C# Class Library (Core Logic)
+│   ├── AliasGenerator.cs             # Synthesizes human-like aliases
+│   └── TrackerNeutralizer.cs         # Strips tracking pixels using Regex
+├── CloakVanishApp/                   # WPF Desktop Application (Native UI)
+│   ├── MainWindow.xaml               # Application layout (XAML)
+│   └── MainWindow.xaml.cs            # UI Event handlers connecting to Core
+└── CloakVanishTests/                 # xUnit Test Suite
+    ├── AliasGeneratorTests.cs
+    └── TrackerNeutralizerTests.cs
 ```
 
 ## Setup & Deployment
 
 ### Prerequisites
 
-*   Python 3.8+
+*   A Windows Operating System.
+*   [.NET SDK 8.0+](https://dotnet.microsoft.com/download) (or the version specified by your environment).
+*   Visual Studio 2022 (Recommended) OR Visual Studio Code with the C# Dev Kit.
 
-### Installation
+### Building and Running Locally
 
-1.  Clone the repository:
-    ```bash
-    git clone https://github.com/your-org/cloakvanish.git
-    cd cloakvanish
-    ```
-2.  (Optional) Create a virtual environment:
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-    ```
-3.  Currently, the boilerplate relies on Python standard libraries and doesn't require additional pip packages for the core demonstration.
+#### Option 1: Using Visual Studio
+1. Clone the repository: `git clone https://github.com/your-org/cloakvanish.git`
+2. Open the `CloakVanish.sln` file in Visual Studio.
+3. Ensure `CloakVanishApp` is set as the Startup Project.
+4. Press `F5` or click **Start** to build and run the native WPF application.
 
-### Running the CLI Application
+#### Option 2: Using the .NET CLI
+1. Clone the repository and navigate to the root directory.
+2. Restore dependencies:
+   ```cmd
+   dotnet restore
+   ```
+3. Build the solution:
+   ```cmd
+   dotnet build
+   ```
+4. Run the WPF application natively:
+   ```cmd
+   dotnet run --project CloakVanishApp
+   ```
 
-You can interact with the core logic locally using the provided standalone CLI tool `cloakvanish_cli.py`.
-
-**Generate an Alias:**
-```bash
-python cloakvanish_cli.py generate-alias
+### Running the Test Suite
+The core algorithms are fully tested using xUnit. You can verify the project's logic by running:
+```cmd
+dotnet test CloakVanishTests
 ```
 
-**Neutralize Trackers in an HTML File:**
-```bash
-# Assuming you have an HTML file named email.html
-python cloakvanish_cli.py neutralize-html --file email.html
+### Compiling to a Standalone Executable (.exe)
+You can publish the WPF application as a single, standalone executable that doesn't require users to install the .NET runtime:
+```cmd
+dotnet publish CloakVanishApp -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true
 ```
-
-### Building a Local Executable (.exe)
-
-If you wish to compile the CLI application into a standalone executable (e.g., for Windows), you can use `pyinstaller`:
-
-1.  Install pyinstaller:
-    ```bash
-    pip install pyinstaller
-    ```
-2.  Compile the script:
-    ```bash
-    pyinstaller --onefile cloakvanish_cli.py
-    ```
-3.  The executable will be located in the `dist/` directory.
-
-## API References (Conceptual Backend Example)
-
-When running the full server nodes, the internal modules operate like so:
-
-```python
-# Alias Synthesis
-from src.alias_generator import generate_alias
-new_alias = generate_alias()
-print(f"Generated Endpoint: {new_alias}@cv-mail.node")
-
-# Tracker Sanitization
-from src.tracker_neutralizer import neutralize_trackers
-clean_html = neutralize_trackers(raw_html_payload)
-```
+The resulting `.exe` will be generated in `CloakVanishApp/bin/Release/netX.X/win-x64/publish/`.
