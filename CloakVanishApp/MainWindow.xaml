@@ -1,0 +1,28 @@
+<Window x:Class="CloakVanishApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CloakVanish - Autonomous Zero-Knowledge Proxy" Height="450" Width="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Alias Generator" FontWeight="Bold" FontSize="16" Margin="0,0,0,5"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,15">
+            <Button x:Name="BtnGenerateAlias" Content="Generate Alias" Width="120" Height="30" Click="BtnGenerateAlias_Click"/>
+            <TextBox x:Name="TxtAliasOutput" IsReadOnly="True" Width="430" Height="30" Margin="10,0,0,0" VerticalContentAlignment="Center" FontSize="14"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="2" Text="HTML Tracker Neutralizer Input:" FontWeight="Bold" Margin="0,0,0,5" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtHtmlInput" Grid.Row="2" AcceptsReturn="True" TextWrapping="Wrap" Margin="0,25,0,10" VerticalScrollBarVisibility="Auto" FontFamily="Consolas"/>
+
+        <Button x:Name="BtnNeutralize" Grid.Row="3" Content="Neutralize Trackers" Width="150" Height="30" HorizontalAlignment="Left" Margin="0,0,0,10" Click="BtnNeutralize_Click"/>
+
+        <TextBlock Grid.Row="4" Text="Sanitized HTML Output:" FontWeight="Bold" Margin="0,0,0,5" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtHtmlOutput" Grid.Row="4" AcceptsReturn="True" TextWrapping="Wrap" IsReadOnly="True" Margin="0,25,0,0" VerticalScrollBarVisibility="Auto" FontFamily="Consolas" Background="#F0F0F0"/>
+    </Grid>
+</Window>

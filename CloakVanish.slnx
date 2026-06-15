@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="CloakVanishApp/CloakVanishApp.csproj" />
+  <Project Path="CloakVanishCore/CloakVanishCore.csproj" />
+  <Project Path="CloakVanishTests/CloakVanishTests.csproj" />
+</Solution>
