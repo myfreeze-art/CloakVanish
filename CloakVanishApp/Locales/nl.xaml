@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="AppTitle">CLOAKVANISH</system:String>
+    <system:String x:Key="Subtitle">Autonome Zero-Knowledge Communicatie Proxy</system:String>
+    <system:String x:Key="AliasGeneratorLabel">Alias Generator</system:String>
+    <system:String x:Key="BtnGenerateAlias">Genereer Anonieme Alias</system:String>
+    <system:String x:Key="AliasPlaceholder">[ Alias verschijnt hier ]</system:String>
+    <system:String x:Key="HtmlInputLabel">Ruwe HTML / MIME Invoer</system:String>
+    <system:String x:Key="BtnNeutralize">⚡ Voer Heuristische Tracker Neutralisatie uit</system:String>
+    <system:String x:Key="HtmlOutputLabel">Geschoonde Veilige Uitvoer (Klaar voor client)</system:String>
+    <system:String x:Key="MsgNoInput">Geef HTML op om te schonen.</system:String>
+    <system:String x:Key="MsgInputRequiredTitle">Invoer Vereist</system:String>
+    <system:String x:Key="MsgSuccess">/* SUCCES: Trackers geneutraliseerd. Veilig om te bekijken. */</system:String>
+    <system:String x:Key="MsgNoTrackers">/* Geen trackingpixels gedetecteerd. */</system:String>
+</ResourceDictionary>

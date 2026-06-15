@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="AppTitle">CLOAKVANISH</system:String>
+    <system:String x:Key="Subtitle">स्वायत्त शून्य-ज्ञान संचार प्रॉक्सी</system:String>
+    <system:String x:Key="AliasGeneratorLabel">उपनाम जनरेटर</system:String>
+    <system:String x:Key="BtnGenerateAlias">अनाम उपनाम उत्पन्न करें</system:String>
+    <system:String x:Key="AliasPlaceholder">[ उपनाम यहां दिखाई देगा ]</system:String>
+    <system:String x:Key="HtmlInputLabel">कच्चा HTML / MIME इनपुट</system:String>
+    <system:String x:Key="BtnNeutralize">⚡ अनुमानी ट्रैकर निष्प्रभावीकरण निष्पादित करें</system:String>
+    <system:String x:Key="HtmlOutputLabel">स्वच्छ सुरक्षित आउटपुट (ग्राहक के लिए तैयार)</system:String>
+    <system:String x:Key="MsgNoInput">कृपया साफ करने के लिए HTML प्रदान करें।</system:String>
+    <system:String x:Key="MsgInputRequiredTitle">इनपुट आवश्यक</system:String>
+    <system:String x:Key="MsgSuccess">/* सफलता: ट्रैकर्स निष्प्रभावी। देखने के लिए सुरक्षित। */</system:String>
+    <system:String x:Key="MsgNoTrackers">/* कोई ट्रैकिंग पिक्सेल नहीं मिला। */</system:String>
+</ResourceDictionary>

@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="AppTitle">CLOAKVANISH</system:String>
+    <system:String x:Key="Subtitle">자율 영지식 통신 프록시</system:String>
+    <system:String x:Key="AliasGeneratorLabel">별칭 생성기</system:String>
+    <system:String x:Key="BtnGenerateAlias">익명 별칭 생성</system:String>
+    <system:String x:Key="AliasPlaceholder">[ 여기에 별칭이 표시됩니다 ]</system:String>
+    <system:String x:Key="HtmlInputLabel">원시 HTML / MIME 입력</system:String>
+    <system:String x:Key="BtnNeutralize">⚡ 휴리스틱 트래커 무력화 실행</system:String>
+    <system:String x:Key="HtmlOutputLabel">삭제된 안전한 출력 (클라이언트용)</system:String>
+    <system:String x:Key="MsgNoInput">정리할 HTML을 제공하십시오.</system:String>
+    <system:String x:Key="MsgInputRequiredTitle">입력 필요</system:String>
+    <system:String x:Key="MsgSuccess">/* 성공: 트래커가 무력화되었습니다. 안전하게 볼 수 있습니다. */</system:String>
+    <system:String x:Key="MsgNoTrackers">/* 추적 픽셀이 감지되지 않았습니다. */</system:String>
+</ResourceDictionary>

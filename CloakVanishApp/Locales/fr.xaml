@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="AppTitle">CLOAKVANISH</system:String>
+    <system:String x:Key="Subtitle">Proxy de communication autonome à connaissance nulle</system:String>
+    <system:String x:Key="AliasGeneratorLabel">Générateur d'alias</system:String>
+    <system:String x:Key="BtnGenerateAlias">Générer un alias anonyme</system:String>
+    <system:String x:Key="AliasPlaceholder">[ L'alias apparaîtra ici ]</system:String>
+    <system:String x:Key="HtmlInputLabel">Entrée HTML / MIME brute</system:String>
+    <system:String x:Key="BtnNeutralize">⚡ Exécuter la neutralisation heuristique des traqueurs</system:String>
+    <system:String x:Key="HtmlOutputLabel">Sortie sécurisée (Prêt pour le client)</system:String>
+    <system:String x:Key="MsgNoInput">Veuillez fournir une charge utile HTML à nettoyer.</system:String>
+    <system:String x:Key="MsgInputRequiredTitle">Entrée requise</system:String>
+    <system:String x:Key="MsgSuccess">/* SUCCÈS : Traqueurs neutralisés. Sécurisé. */</system:String>
+    <system:String x:Key="MsgNoTrackers">/* Aucun pixel de suivi détecté. */</system:String>
+</ResourceDictionary>

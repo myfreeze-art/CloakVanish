@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="AppTitle">CLOAKVANISH</system:String>
+    <system:String x:Key="Subtitle">自主零知识通信代理</system:String>
+    <system:String x:Key="AliasGeneratorLabel">别名生成器</system:String>
+    <system:String x:Key="BtnGenerateAlias">生成匿名别名</system:String>
+    <system:String x:Key="AliasPlaceholder">[ 别名将显示在这里 ]</system:String>
+    <system:String x:Key="HtmlInputLabel">原始 HTML / MIME 有效载荷输入</system:String>
+    <system:String x:Key="BtnNeutralize">⚡ 执行启发式跟踪器中和</system:String>
+    <system:String x:Key="HtmlOutputLabel">净化后的安全输出 (准备好发送给客户端)</system:String>
+    <system:String x:Key="MsgNoInput">请提供要净化的 HTML。</system:String>
+    <system:String x:Key="MsgInputRequiredTitle">需要输入</system:String>
+    <system:String x:Key="MsgSuccess">/* 成功：跟踪器已中和。安全查看。 */</system:String>
+    <system:String x:Key="MsgNoTrackers">/* 未检测到跟踪像素。 */</system:String>
+</ResourceDictionary>

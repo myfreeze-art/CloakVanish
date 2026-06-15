@@ -4,6 +4,13 @@
     <ProjectReference Include="..\CloakVanishCore\CloakVanishCore.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Page Include="Locales\*.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>

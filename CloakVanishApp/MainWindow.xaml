@@ -99,10 +99,35 @@
         </Grid.RowDefinitions>
 
         <!-- Header -->
-        <StackPanel Grid.Row="0" Margin="0,0,0,25">
-            <TextBlock Text="CLOAKVANISH" Foreground="#007ACC" FontSize="28" FontWeight="Black" LetterSpacing="2"/>
-            <TextBlock Text="Autonomous Zero-Knowledge Communication Proxy" Foreground="#858585" FontSize="14" Margin="0,4,0,0"/>
-        </StackPanel>
+        <Grid Grid.Row="0" Margin="0,0,0,25">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="{DynamicResource AppTitle}" Foreground="#007ACC" FontSize="28" FontWeight="Black" LetterSpacing="2"/>
+                <TextBlock Text="{DynamicResource Subtitle}" Foreground="#858585" FontSize="14" Margin="0,4,0,0" TextWrapping="Wrap"/>
+            </StackPanel>
+
+            <ComboBox x:Name="CboLanguage" Grid.Column="1" Width="120" Height="30" VerticalAlignment="Top" SelectionChanged="CboLanguage_SelectionChanged" Background="#2D2D30" Foreground="Black">
+                <ComboBoxItem Content="English" Tag="en" IsSelected="True"/>
+                <ComboBoxItem Content="Русский" Tag="ru"/>
+                <ComboBoxItem Content="Français" Tag="fr"/>
+                <ComboBoxItem Content="Español" Tag="es"/>
+                <ComboBoxItem Content="Deutsch" Tag="de"/>
+                <ComboBoxItem Content="中文" Tag="zh"/>
+                <ComboBoxItem Content="日本語" Tag="ja"/>
+                <ComboBoxItem Content="한국어" Tag="ko"/>
+                <ComboBoxItem Content="Italiano" Tag="it"/>
+                <ComboBoxItem Content="Português" Tag="pt"/>
+                <ComboBoxItem Content="العربية" Tag="ar"/>
+                <ComboBoxItem Content="हिन्दी" Tag="hi"/>
+                <ComboBoxItem Content="Türkçe" Tag="tr"/>
+                <ComboBoxItem Content="Nederlands" Tag="nl"/>
+                <ComboBoxItem Content="Polski" Tag="pl"/>
+            </ComboBox>
+        </Grid>
 
         <!-- Alias Generator -->
         <Grid Grid.Row="1" Margin="0,0,0,30">
@@ -111,9 +136,9 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="BtnGenerateAlias" Grid.Column="0" Content="Generate Anonymous Alias" Width="220" Height="45" Click="BtnGenerateAlias_Click"/>
+            <Button x:Name="BtnGenerateAlias" Grid.Column="0" Content="{DynamicResource BtnGenerateAlias}" Width="250" Height="45" Click="BtnGenerateAlias_Click"/>
             <TextBox x:Name="TxtAliasOutput" Grid.Column="1" IsReadOnly="True" Height="45" Margin="15,0,0,0"
-                     Text="[ Alias will appear here ]" VerticalContentAlignment="Center" FontFamily="Consolas" FontSize="16" FontWeight="SemiBold"/>
+                     Text="{DynamicResource AliasPlaceholder}" VerticalContentAlignment="Center" FontFamily="Consolas" FontSize="16" FontWeight="SemiBold"/>
         </Grid>
 
         <!-- Tracker Neutralizer Input -->
@@ -122,12 +147,12 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="Raw HTML / MIME Payload Input" Foreground="#E0E0E0" FontSize="15" FontWeight="SemiBold" Margin="0,0,0,10"/>
+            <TextBlock Grid.Row="0" Text="{DynamicResource HtmlInputLabel}" Foreground="#E0E0E0" FontSize="15" FontWeight="SemiBold" Margin="0,0,0,10"/>
             <TextBox x:Name="TxtHtmlInput" Grid.Row="1" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" FontFamily="Consolas" Foreground="#D4D4D4"/>
         </Grid>
 
         <!-- Action Button -->
-        <Button x:Name="BtnNeutralize" Grid.Row="3" Content="⚡ Execute Heuristic Tracker Neutralization" Style="{StaticResource GreenButtonStyle}" Height="45" Margin="0,20,0,20" Click="BtnNeutralize_Click"/>
+        <Button x:Name="BtnNeutralize" Grid.Row="3" Content="{DynamicResource BtnNeutralize}" Style="{StaticResource GreenButtonStyle}" Height="45" Margin="0,20,0,20" Click="BtnNeutralize_Click"/>
 
         <!-- Sanitized Output -->
         <Grid Grid.Row="4">
@@ -135,7 +160,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="Sanitized Safe Output (Ready for client)" Foreground="#107C10" FontSize="15" FontWeight="SemiBold" Margin="0,0,0,10"/>
+            <TextBlock Grid.Row="0" Text="{DynamicResource HtmlOutputLabel}" Foreground="#107C10" FontSize="15" FontWeight="SemiBold" Margin="0,0,0,10"/>
             <TextBox x:Name="TxtHtmlOutput" Grid.Row="1" AcceptsReturn="True" TextWrapping="Wrap" IsReadOnly="True" VerticalScrollBarVisibility="Auto" FontFamily="Consolas"/>
         </Grid>
 
